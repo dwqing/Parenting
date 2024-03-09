@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<FrameLayout
+    android:id="@+id/fragment_layout"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"/>
+    <RadioGroup
+        android:id="@+id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffff"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rd_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:button="@drawable/home"
+            android:padding="10dp"
+            android:text="首页"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rb_yuer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:button="@drawable/home"
+            android:padding="10dp"
+            android:text="育儿"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rb_tuoguan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:button="@drawable/home"
+            android:padding="10dp"
+            android:text="托管"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rb_xiaoxi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:button="@drawable/home"
+            android:padding="10dp"
+            android:text="消息"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rd_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:button="@drawable/mine"
+            android:padding="10dp"
+            android:text="个人"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+</RelativeLayout>
