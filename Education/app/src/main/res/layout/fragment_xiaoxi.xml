@@ -3,12 +3,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".XiaoxiFragment">
+    tools:context=".Xiaoxi.XiaoxiFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="消息" />
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="消息通知"
+            android:textSize="25sp"
+            android:gravity="left|center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.63"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="信息"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="通话"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <Button
+                android:layout_marginLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="关注"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_xiaoxi"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"/>
+    </LinearLayout>
+
 
 </FrameLayout>

@@ -3,12 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TuoguanFragment">
+    tools:context=".Tuoguan.TuoguanFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="托管" />
+
+<!--    <com.example.education.CircleImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/ping1" />-->
+
+    <com.example.education.RoundImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ping1"/>
 
 </FrameLayout>

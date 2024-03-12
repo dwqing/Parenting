@@ -7,9 +7,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.example.education.Home.HomeFragment;
+import com.example.education.Mine.MineFragment;
+import com.example.education.Tuoguan.TuoguanFragment;
+import com.example.education.Xiaoxi.XiaoxiFragment;
+import com.example.education.Yuer.YuerFragment;
 
 import java.util.ArrayList;
 import java.util.List;

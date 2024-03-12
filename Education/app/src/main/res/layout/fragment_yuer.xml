@@ -3,12 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".YuerFragment">
+    tools:context=".Home.HomeFragment"
+    android:background="@color/blue">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="育儿" />
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="育儿"
+            android:textSize="23sp"
+            android:gravity="center"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:background="@drawable/search_bk"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="0.8">
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/search"
+                android:background="@color/transparent"
+                android:layout_weight="1"
+                android:padding="5dp"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:hint="Search"
+                android:background="@color/transparent"
+                android:layout_weight="8"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <RadioGroup
+            android:id="@+id/yuer_rg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="0.5">
+            <RadioButton
+                android:id="@+id/baby_act_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="宝宝活动"
+                android:gravity="center"/>
+            <RadioButton
+                android:id="@+id/baby_oder_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="活动预约"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/baby_act"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="宝宝活动"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/baby_oder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="活动预约"
+                android:gravity="center"
+                />
+
+        </RadioGroup>
+        <FrameLayout
+            android:id="@+id/fragment_container_yuer"
+            android:layout_weight="8"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </FrameLayout>
