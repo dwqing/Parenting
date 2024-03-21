@@ -6,9 +6,12 @@
     tools:context=".Yuer.BabyOderFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/baby_oder_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="预约" />
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"/>
 
 </FrameLayout>

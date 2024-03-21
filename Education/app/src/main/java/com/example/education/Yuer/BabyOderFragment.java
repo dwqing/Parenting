@@ -3,12 +3,18 @@ package com.example.education.Yuer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.education.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,9 @@ import com.example.education.R;
  * create an instance of this fragment.
  */
 public class BabyOderFragment extends Fragment {
+    private RecyclerView mRecyclerView;
+    private OderAdapter mAdapter;
+    private List<Integer> mImgList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +69,67 @@ public class BabyOderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_baby_oder, container, false);
+        View view = inflater.inflate(R.layout.fragment_baby_oder, container, false);
+
+        mRecyclerView = view.findViewById(R.id.baby_oder_rv);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        initData();
+        update();
+        return view;
+    }
+    public void update() {
+        mAdapter = new OderAdapter(mImgList);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+    public void initData() {
+        mImgList = new ArrayList<>();
+        mImgList.add(R.drawable.dt1);
+        mImgList.add(R.drawable.dt2);
+        mImgList.add(R.drawable.dt3);
+        mImgList.add(R.drawable.dt1);
+        mImgList.add(R.drawable.dt2);
+        mImgList.add(R.drawable.dt3);
+        mImgList.add(R.drawable.dt1);
+        mImgList.add(R.drawable.dt2);
+        mImgList.add(R.drawable.dt3);
+        mImgList.add(R.drawable.dt1);
+        mImgList.add(R.drawable.dt2);
+        mImgList.add(R.drawable.dt3);
+        mImgList.add(R.drawable.dt1);
+        mImgList.add(R.drawable.dt2);
+        mImgList.add(R.drawable.dt3);
+    }
+    private class OderHolder extends RecyclerView.ViewHolder{
+        private ImageView mImageView;
+        public OderHolder(LayoutInflater inflater,ViewGroup parent) {
+            super(inflater.inflate(R.layout.item_recyclerview_oder,parent,false));
+            mImageView = itemView.findViewById(R.id.oder_imageView);
+        }
+        public void bind(int position){
+            mImageView.setImageResource(mImgList.get(position));
+        }
+    }
+    public class OderAdapter extends RecyclerView.Adapter<OderHolder> {
+
+        private List<Integer> mImgList;
+        public OderAdapter(List<Integer> mImgList) {
+            this.mImgList = mImgList;
+        }
+        @Override
+        public OderHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new OderHolder(LayoutInflater.from(parent.getContext()),parent);
+        }
+
+        @Override
+        public void onBindViewHolder(OderHolder holder, int position) {
+
+            holder.bind(position);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return mImgList.size();
+        }
     }
 }

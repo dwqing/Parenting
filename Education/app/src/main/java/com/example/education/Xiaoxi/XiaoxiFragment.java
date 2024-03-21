@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,8 +68,8 @@ public class XiaoxiFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_xiaoxi, container, false);
         // Inflate the layout for this fragment
         recyclerView = view.findViewById(R.id.recycler_xiaoxi);
+//        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         updateData();
         return view;
     }

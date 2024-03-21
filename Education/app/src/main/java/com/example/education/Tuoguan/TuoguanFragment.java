@@ -1,5 +1,7 @@
 package com.example.education.Tuoguan;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.education.DoubleSeekBar;
+import com.example.education.MyElongScaleSeekBar;
 import com.example.education.R;
 
 /**
@@ -16,6 +23,11 @@ import com.example.education.R;
  * create an instance of this fragment.
  */
 public class TuoguanFragment extends Fragment {
+    private SeekBar mSeekBar;
+    private TextView mTextView, mTextView2,mTextView3;
+    private DoubleSeekBar mDoubleSeekBar;
+    private MyElongScaleSeekBar mMyElongScaleSeekBar;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,10 +69,44 @@ public class TuoguanFragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tuoguan, container, false);
+        View view = inflater.inflate(R.layout.fragment_tuoguan, container, false);
+        mSeekBar = view.findViewById(R.id.seekBar_t);
+        mTextView = view.findViewById(R.id.tuoguan_tv);
+        mTextView2 = view.findViewById(R.id.tuoguan_tv2);
+        mTextView3 = view.findViewById(R.id.tuoguan_tv3);
+        mDoubleSeekBar = view.findViewById(R.id.double_sb);
+        mMyElongScaleSeekBar = view.findViewById(R.id.double_sb2);
+        mDoubleSeekBar.setMinValue(0);
+        mDoubleSeekBar.setMaxValue(100);
+        mDoubleSeekBar.setOnChanged(new DoubleSeekBar.OnChanged() {
+            @Override
+            public void onChange(int leftValue, int rightValue) {
+                mTextView2.setText(leftValue + " /100" + "  " + rightValue + " /100");
+            }
+        });
+
+        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mTextView.setText(progress + " /100");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(getContext(), "触碰SeekBar", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(getContext(), "松开SeekBar", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        return view;
     }
 }

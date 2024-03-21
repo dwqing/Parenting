@@ -1,14 +1,22 @@
 package com.example.education.Yuer;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.education.R;
+import com.example.education.Unit.SpaceItemDecoration;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +24,9 @@ import com.example.education.R;
  * create an instance of this fragment.
  */
 public class BabyActFragment extends Fragment {
+    private RecyclerView recyclerView;
+    private List<Integer> mImgList;
+    private BabyActAdapter babyActAdapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,10 +68,71 @@ public class BabyActFragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_baby_act, container, false);
+        recyclerView = view.findViewById(R.id.baby_act_rv);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        initData();
+        update();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_baby_act, container, false);
+        return view;
+    }
+    public void update() {
+        babyActAdapter = new BabyActAdapter(mImgList);
+        recyclerView.setAdapter(babyActAdapter);
+    }
+    public void initData() {
+        mImgList = new ArrayList<>();
+        mImgList.add(R.drawable.act1);
+        mImgList.add(R.drawable.act2);
+        mImgList.add(R.drawable.act3);
+        mImgList.add(R.drawable.act4);
+        mImgList.add(R.drawable.act5);
+        mImgList.add(R.drawable.act1);
+        mImgList.add(R.drawable.act2);
+        mImgList.add(R.drawable.act3);
+        mImgList.add(R.drawable.act4);
+        mImgList.add(R.drawable.act5);
+        mImgList.add(R.drawable.act1);
+        mImgList.add(R.drawable.act2);
+        mImgList.add(R.drawable.act3);
+        mImgList.add(R.drawable.act4);
+        mImgList.add(R.drawable.act5);
+        mImgList.add(R.drawable.act1);
+        mImgList.add(R.drawable.act2);
+        mImgList.add(R.drawable.act3);
+        mImgList.add(R.drawable.act4);
+        mImgList.add(R.drawable.act5);
+
+    }
+    private class BabyActHolder extends RecyclerView.ViewHolder {
+        private ImageView imageView;
+        public BabyActHolder(LayoutInflater inflater,ViewGroup parent) {
+            super(inflater.inflate(R.layout.item_baby_act,parent,false));
+            imageView = itemView.findViewById(R.id.baby_act_iv);
+        }
+        public void bind(int position) {
+            imageView.setImageResource(mImgList.get(position));
+
+       }
+   }
+    public class BabyActAdapter extends RecyclerView.Adapter<BabyActHolder> {
+        private List<Integer> mImgList;
+        public BabyActAdapter(List<Integer> mImgList) {
+            this.mImgList = mImgList;
+        }
+        public void onBindViewHolder(BabyActHolder holder, int position) {
+            holder.bind(position);
+        }
+        public int getItemCount() {
+            return mImgList.size();
+        }
+        public BabyActHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new BabyActHolder(LayoutInflater.from(parent.getContext()),parent);
+        }
     }
 }

@@ -34,7 +34,6 @@ public class YuerFragment extends Fragment implements RadioGroup.OnCheckedChange
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView babyAct, babyOder;
 
     private RadioButton babyACt_rb,  babyOder_rb;
     private  int position = 0;
@@ -96,8 +95,6 @@ public class YuerFragment extends Fragment implements RadioGroup.OnCheckedChange
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_yuer, container, false);
-        babyAct = v.findViewById(R.id.baby_act);
-        babyOder = v.findViewById(R.id.baby_oder);
         babyACt_rb = v.findViewById(R.id.baby_act_rb);
         babyOder_rb = v.findViewById(R.id.baby_oder_rb);
         mRadioGroup = v.findViewById(R.id.yuer_rg);
@@ -111,23 +108,6 @@ public class YuerFragment extends Fragment implements RadioGroup.OnCheckedChange
 
         FragmentManager fm = getParentFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-//        babyAct.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                position = 0;
-//                ft.replace(R.id.fragment_container_yuer,fragments.get(position));
-//
-//            }
-//        });
-//        babyOder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                position = 1;
-//                ft.replace(R.id.fragment_container_yuer,fragments.get(position));
-//
-//
-//            }
-//        });
 
         return v;
     }

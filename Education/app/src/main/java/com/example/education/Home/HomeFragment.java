@@ -1,14 +1,23 @@
 package com.example.education.Home;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.education.R;
+import com.example.education.Unit.SpaceItemDecoration;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +25,9 @@ import com.example.education.R;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    private RecyclerView mRecyclerView;
+    private homeAdapter mAdapter;
+    private List<Integer> mImgList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,10 +69,70 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        mRecyclerView = view.findViewById(R.id.home_rv);
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
+       // mRecyclerView.addItemDecoration(new SpaceItemDecoration(2, 0, false));;
+        mRecyclerView.setLayoutManager(layoutManager);
+        initData();
+        update();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
+    }
+    public void update() {
+        mAdapter = new homeAdapter(mImgList);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+    private class homeHolder extends RecyclerView.ViewHolder {
+        private ImageView mImageView;
+        public homeHolder(LayoutInflater inflater,ViewGroup parent) {
+            super(inflater.inflate(R.layout.item_home_rv,parent,false));
+            mImageView = itemView.findViewById(R.id.home_iv);
+        }
+        public void bind(int position) {
+            mImageView.setImageResource(mImgList.get(position));
+        }
+    }
+    public class homeAdapter extends RecyclerView.Adapter<homeHolder> {
+        private List<Integer> mImgList;
+        public homeAdapter(List<Integer> mImgList) {
+            this.mImgList = mImgList;
+        }
+        public homeAdapter() {
+        }
+        public void onBindViewHolder(homeHolder holder, int position) {
+            holder.bind(position);
+        }
+        public int getItemCount() {
+            return mImgList.size();
+        }
+        public homeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new homeHolder(LayoutInflater.from(parent.getContext()),parent);
+        }
+    }
+    private void initData() {
+        mImgList = new ArrayList<>();
+        mImgList.add(R.drawable.item1);
+        mImgList.add(R.drawable.item2);
+        mImgList.add(R.drawable.item3);
+        mImgList.add(R.drawable.item4);
+        mImgList.add(R.drawable.item1);
+        mImgList.add(R.drawable.item2);
+        mImgList.add(R.drawable.item3);
+        mImgList.add(R.drawable.item4);
+        mImgList.add(R.drawable.item1);
+        mImgList.add(R.drawable.item2);
+        mImgList.add(R.drawable.item3);
+        mImgList.add(R.drawable.item4);
+        mImgList.add(R.drawable.item1);
+        mImgList.add(R.drawable.item2);
+        mImgList.add(R.drawable.item3);
+        mImgList.add(R.drawable.item4);
+
     }
 }

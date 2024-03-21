@@ -6,9 +6,9 @@
     tools:context=".Yuer.BabyActFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/baby_act_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="宝宝活动" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

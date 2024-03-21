@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home.HomeFragment"
-    android:background="@color/blue">
+    android:background="@drawable/shape_bg_gradient"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -51,35 +52,26 @@
             android:layout_marginRight="15dp"
             android:layout_weight="0.5">
             <RadioButton
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
                 android:id="@+id/baby_act_rb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="宝宝活动"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:button="@null"/>
             <RadioButton
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/baby_oder_rb"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="活动预约"
+                android:button="@null"
                 android:gravity="center"/>
-            <TextView
-                android:id="@+id/baby_act"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="宝宝活动"
-                android:gravity="center"
-                />
-            <TextView
-                android:id="@+id/baby_oder"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="活动预约"
-                android:gravity="center"
-                />
+
 
         </RadioGroup>
         <FrameLayout

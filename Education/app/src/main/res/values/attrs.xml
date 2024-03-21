@@ -3,6 +3,95 @@
     <declare-styleable name="round_image_view">
         <attr name="border_width" format="dimension" />
         <attr name="border_incolor" format="color" />
-        <attr name="border_outcolor" format="color"></attr>
+        <attr name="border_outcolor" format="color">
+
+        </attr>
     </declare-styleable>
+    <attr name="lineHeight" format="dimension" />
+    <!--字的大小 100元-->
+    <attr name="textSize" format="dimension" />
+    <!--字的颜色 100元-->
+    <attr name="textColor" format="color" />
+    <!--两个游标内部 线（进度条）的颜色-->
+    <attr name="inColor" format="color" />
+    <!--两个游标外部 线（进度条）的颜色-->
+    <attr name="outColor" format="color" />
+    <!--左边图标的图片-->
+    <attr name="imageLow" format="reference"/>
+    <!--右边图标 的图片-->
+    <attr name="imageBig" format="reference"/>
+    <!--游标 图片宽度-->
+    <attr name="imagewidth" format="dimension" />
+    <!--游标 图片高度-->
+    <attr name="imageheight" format="dimension" />
+    <!--是否有刻度线-->
+    <attr name="hasRule" format="boolean" />
+    <!--刻度的颜色-->
+    <attr name="ruleColor" format="color" />
+    <!--刻度上边的字 的颜色-->
+    <attr name="ruleTextColor" format="color" />
+    <!--单位 元-->
+    <attr name="unit" format="string"/>
+    <!--单位份数-->
+    <attr name="equal" format="integer"/>
+    <!--刻度单位 $-->
+    <attr name="ruleUnit" format="string"/>
+    <!--刻度上边文字的size-->
+    <attr name="ruleTextSize" format="dimension" />
+    <!--刻度线的高度-->
+    <attr name="ruleLineHeight" format="dimension" />
+    <!--选择器的最大值-->
+    <attr name="bigValue" format="integer"/>
+    <!--选择器的最小值-->
+    <attr name="smallValue" format="integer"/>
+    <declare-styleable name="DoubleSlideSeekBar">
+        <attr name="lineHeight" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="inColor" />
+        <attr name="outColor" />
+        <attr name="imageLow"/>
+        <attr name="imageBig"/>
+        <attr name="imagewidth" />
+        <attr name="imageheight" />
+        <attr name="hasRule" />
+        <attr name="ruleColor" />
+        <attr name="ruleTextColor" />
+        <attr name="unit" />
+        <attr name="equal" />
+        <attr name="ruleUnit" />
+        <attr name="ruleTextSize" />
+        <attr name="ruleLineHeight" />
+        <attr name="bigValue" />
+        <attr name="smallValue" />
+    </declare-styleable>
+    <declare-styleable name="MyElongScaleSeekBar">
+        <attr name="scale_progress_normal_color" format="color" />
+        <attr name="scale_progress_section_color" format="color" />
+        <attr name="scale_left_ball_bg_color" format="color" />
+        <attr name="scale_left_ball_stroke_color" format="color" />
+        <attr name="scale_left_ball_stroke_with" format="dimension" />
+        <attr name="scale_right_ball_bg_color" format="color" />
+        <attr name="scale_right_ball_stroke_color" format="color" />
+        <attr name="scale_right_ball_stroke_with" format="dimension" />
+        <attr name="scale_ball_radio" format="dimension" />
+        <attr name="scale_ball_shadow_radio" format="dimension" />
+        <attr name="scale_ball_shadow_color" format="color" />
+        <attr name="scale_seek_height" format="dimension" />
+        <attr name="scale_left_text_color" format="dimension" />
+        <attr name="scale_left_text_size" format="dimension" />
+        <attr name="scale_right_text_color" format="dimension" />
+        <attr name="scale_right_text_size" format="dimension" />
+        <attr name="scale_text_margin_ball" format="dimension" />
+        <attr name="scale_ball_stick_height" format="dimension" />
+        <attr name="scale_ball_stick_width" format="dimension" />
+        <attr name="scale_ball_stick_margin" format="dimension" />
+        <attr name="scale_ball_stick_color" format="color" />
+        <attr name="scale_progress_unit" format="integer" />
+        <attr name="scale_symbol_front" format="string" />
+
+    </declare-styleable>
+
+
+
 </resources>
