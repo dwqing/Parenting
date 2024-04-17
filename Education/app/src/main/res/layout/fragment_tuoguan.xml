@@ -9,39 +9,95 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <SeekBar
-            android:id="@+id/seekBar_t"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="10"
-            android:secondaryProgress="70"/>
         <TextView
-            android:id="@+id/tuoguan_tv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="10"
-            android:textSize="20sp"/>
-        <com.example.education.MyElongScaleSeekBar
-            android:id="@+id/double_sb2"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:text="托管"
+            android:textSize="23sp"
+            android:gravity="center"/>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <com.example.education.DoubleSeekBar
-            android:id="@+id/double_sb"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="年龄段"
+                android:textSize="18sp"/>
+            <Spinner
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:prompt="@string/spinner_name"
+                android:entries="@array/spinnerData"
+                android:spinnerMode="dialog"/>
+
+
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/tuoguan_rg"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tuoguan_tv2"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-        <TextView
-            android:id="@+id/tuoguan_tv3"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/tuoguan_teacher_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="老师"
+                android:button="@null"
+                android:background="@color/transparent"
+                />
+            <RadioButton
+                android:id="@+id/tuoguan_time_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="托管时间"
+                android:background="@color/transparent"
+                android:button="@null"/>
+            <RadioButton
+                android:background="@color/transparent"
+                android:id="@+id/tuoguan_content_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="托管内容"
+                android:gravity="center"
+                android:button="@null"/>
+
+        </RadioGroup>
+        <FrameLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/fragment_tuoguan_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"/>
+
+
+<!--        <com.example.education.DoubleSeekBar-->
+<!--            android:id="@+id/double_sb"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/tuoguan_tv2"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="TextView" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/tuoguan_tv3"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="TextView" />-->
 
 
     </LinearLayout>

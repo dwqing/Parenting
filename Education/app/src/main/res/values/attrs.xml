@@ -91,6 +91,15 @@
         <attr name="scale_symbol_front" format="string" />
 
     </declare-styleable>
+    <array name="spinnerData">
+        <item>0岁</item>
+        <item>1岁</item>
+        <item>2岁</item>
+        <item>3岁</item>
+        <item>4岁</item>
+        <item>5岁</item>
+        <item>6岁</item>
+    </array>
 
 
 

@@ -2,4 +2,6 @@
     <string name="app_name">Education</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="spinner_name">年龄段</string>
 </resources>
